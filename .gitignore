@@ -37,3 +37,11 @@ nosetests.xml
 
 config.py
 .git
+
+# PyCharm
+.idea
+venv
+
+# Our specific working settings files
+wsgi.py
+uwsgi.ini
