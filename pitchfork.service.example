@@ -1,0 +1,10 @@
+[Unit]
+Description=uWSGI instance to serve pitchfork
+After=network.target
+
+[Service]
+Type=idle
+ExecStart=/bin/sh -c '/opt/pitchfork/venv/bin/uwsgi --ini /opt/pitchfork/uwsgi.ini --enable-threads --pyargv "--log-dir /var/log/pitchfork --log-file pitchfork.log"'
+
+[Install]
+WantedBy=multi-user.target

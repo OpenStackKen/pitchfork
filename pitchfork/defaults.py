@@ -34,18 +34,28 @@ def application_initialize(db, app):
             {
                 '$set': {
                     'app_title': 'Pitchfork',
+                    'app_warning': (
+                        '<div> <div class="alert alert-warning"'
+                        ' aria-label="Domain pitchfork.cloudapi.co changing to'
+                        ' pitchfork.rax.io.  Update your bookmarks.">'
+                        '<strong>Warning!</strong> We are retiring the domain'
+                        ' pitchfork.cloudapi.co.  This site is, and will '
+                        'continue to be available via'
+                        ' <a href="https://pitchfork.rax.io">'
+                        'https://pitchfork.rax.io</a>.</div></div>'
+                    ),
                     'app_well': (
                         '<p class="lead">Rackspace Cloud - API Interactive '
                         'Website Application</p><div>For improvements or '
                         'suggestions please go to GitHub and submit an '
-                        '<a href="https://github.com/rackerlabs/pitchfork/'
+                        '<a href="https://github.com/Rackspace-DOT/pitchfork/'
                         'issues/new" class="tooltip-title" target="_blank" '
                         'title="Submit a GitHub issue">issue</a></div>'
                     ),
                     'app_footer': (
                         'This site is not officially supported by Rackspace. '
                         'Source is available on <a href="https://github.com/'
-                        'rackerlabs/pitchfork/" class="tooltip-title" target='
+                        'Rackspace-DOT/pitchfork/" class="tooltip-title" target='
                         '"_blank" title="Pitchfork Repository">github</a>'
                     ),
                     'admins': [
@@ -146,15 +156,6 @@ def application_initialize(db, app):
                             'active': True,
                             'parent_order': 3,
                             'order': 8,
-                            'permissions': 'all'
-                        }, {
-                            'url': '/fg_servers',
-                            'name': 'First Gen Servers',
-                            'db_name': 'first_gen_servers',
-                            'parent': 'cloud_products',
-                            'active': True,
-                            'parent_order': 3,
-                            'order': 9,
                             'permissions': 'all'
                         }, {
                             'url': '/identity',
@@ -319,15 +320,6 @@ def application_initialize(db, app):
                             'order': 8,
                             'permissions': 'administrators'
                         }, {
-                            'url': '/fg_servers/manage',
-                            'name': 'FG Servers',
-                            'db_name': 'fg_servers_setup',
-                            'parent': 'manage_products',
-                            'active': True,
-                            'parent_order': 4,
-                            'order': 9,
-                            'permissions': 'administrators'
-                        }, {
                             'url': '/identity/manage',
                             'name': 'Identity',
                             'db_name': 'identity_setup',
@@ -488,15 +480,6 @@ def application_initialize(db, app):
                             'active': True,
                             'parent_order': 5,
                             'order': 8,
-                            'permissions': 'administrators'
-                        }, {
-                            'url': '/fg_servers/manage/api',
-                            'name': 'FG Servers',
-                            'db_name': 'fg_servers_api',
-                            'parent': 'api_settings',
-                            'active': True,
-                            'parent_order': 5,
-                            'order': 9,
                             'permissions': 'administrators'
                         }, {
                             'url': '/identity/manage/api',
@@ -671,16 +654,6 @@ def application_initialize(db, app):
                             'parent_order': 8,
                             'order': 3,
                             'permissions': 'administrators'
-                        }, {
-                            'name': 'Anchor - Host Distribution',
-                            'parent': 'additional_tools',
-                            'url': 'https://rscloud.info',
-                            'parent_order': 9,
-                            'db_name': 'anchor',
-                            'active': True,
-                            'divider': False,
-                            'order': 1,
-                            'permissions': 'all'
                         }
 
                     ],
@@ -1024,7 +997,7 @@ def application_initialize(db, app):
                         }
                     ],
                     'uk_api': 'https://lon.servers.api.rackspacecloud.com',
-                    'active': True,
+                    'active': False,
                     'require_region': True,
                     'doc_url': (
                         'http://docs.rackspace.com/servers/api/v1.0'

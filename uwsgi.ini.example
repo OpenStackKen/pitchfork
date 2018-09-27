@@ -1,0 +1,14 @@
+[uwsgi]
+module=wsgi:app
+
+master = true
+processes = 10
+wsgi-file = /opt/pitchfork/wsgi.py
+pidfile = /var/run/pitchfork.pid
+socket = /var/run/pitchfork.sock
+chmod-socket = 777
+vacuum = true
+
+die-on-term = true
+
+logto = /var/log/pitchfork/pitchfork.log

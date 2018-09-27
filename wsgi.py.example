@@ -1,0 +1,21 @@
+# coding=utf-8
+import os
+import sys
+import json
+
+# Add the app's directory to the PYTHONPATH
+BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)))
+
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
+from pitchfork.setup_application import create_app  # noqa: E402
+
+app = create_app()
+
+# For Local installs with Apache and mod_wsgi
+application = app
+
+if __name__ == "__main__":
+    print("Starting App in Debug mode")
+    app.run(debug=True)
