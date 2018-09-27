@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/oldarmyc/pitchfork.svg)](https://travis-ci.org/oldarmyc/pitchfork)
-
 Pitchfork
 =========
 
@@ -39,7 +37,7 @@ All you need is Python 2.7, Mongodb, and a web browser or use docker
 ````
 mkvirtualenv pitchfork
 cd pitchfork
-git clone https://github.com/oldarmyc/pitchfork.git
+git clone https://github.com/Rackspace-DOT/pitchfork.git
 cd pitchfork
 workon pitchfork
 ````
@@ -83,7 +81,7 @@ Browse to http://localhost:5000 to view the application and login using your Clo
 ##### Create and git the code
 ```
 mkdir pitchfork
-git clone https://github.com/oldarmyc/pitchfork.git
+git clone https://github.com/Rackspace-DOT/pitchfork.git
 cd pitchfork
 ```
 
